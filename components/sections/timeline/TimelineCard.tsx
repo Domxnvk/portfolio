@@ -6,7 +6,7 @@ import { Card, CardHeader } from "@heroui/card";
 import { Chip } from "@heroui/chip";
 import { Button } from "@heroui/button";
 import { Icon } from "@iconify/react";
-import Image from "next/image";
+import { Image } from "@heroui/react"; // Import Image from HeroUI
 
 import { TimelineEvent } from "./types";
 
@@ -42,17 +42,20 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
             <h4 className="text-black font-medium text-large">{event.title}</h4>
           </div>
         </CardHeader>
-        <div className="relative w-full h-full flex items-center justify-center">
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-          <div className="w-full h-full relative">
-            <Image
-              alt={`${event.title} background`}
-              className="p-8 pt-16"
-              layout="fill"
-              objectFit="contain"
-              src={event.image}
-            />
-          </div>
+        <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-[1]" />
+          {/* Using HeroUI Image component instead of img */}
+          <Image
+            removeWrapper
+            alt={`${event.title} background`}
+            className="absolute inset-0"
+            classNames={{
+              wrapper: "w-full h-full !overflow-hidden",
+              img: "object-contain p-8 pt-16 w-full h-full",
+            }}
+            radius="none"
+            src={event.image}
+          />
         </div>
         {isFlipped && (
           <motion.div

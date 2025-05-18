@@ -5,7 +5,7 @@ import { Modal, ModalContent, ModalBody } from "@heroui/modal";
 import { Button } from "@heroui/button";
 import { Chip } from "@heroui/chip";
 import { Icon } from "@iconify/react";
-import Image from "next/image";
+import { Image } from "@heroui/image";
 
 import { ProjectInterface } from "./types";
 
@@ -68,12 +68,19 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
                       {/* Image showcase on the right */}
                       <div className="w-full md:w-1/2 order-1 md:order-2">
                         <div className="relative w-full h-60 md:h-60 rounded-2xl overflow-hidden">
-                          <Image
-                            fill
-                            alt={`${project.title} showcase`}
-                            className="object-contain object-center p-4"
-                            src={project.modalContent.showcaseImage}
-                          />
+                          {/* Fixed image container */}
+                          <div className="w-full h-full">
+                            <Image
+                              removeWrapper
+                              alt={`${project.title} showcase`}
+                              classNames={{
+                                wrapper: "w-full h-full !overflow-hidden",
+                                img: "object-contain object-center p-4 w-full h-full",
+                              }}
+                              radius="none"
+                              src={project.modalContent.showcaseImage}
+                            />
+                          </div>
                         </div>
                       </div>
 

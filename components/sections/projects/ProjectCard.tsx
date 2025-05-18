@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Card, CardHeader, CardBody } from "@heroui/card";
 import { Button } from "@heroui/button";
 import { Icon } from "@iconify/react";
-import Image from "next/image";
+import { Image } from "@heroui/image";
 
 import { ProjectInterface } from "./types";
 
@@ -51,16 +51,22 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         </CardHeader>
         <CardBody className="p-0 relative" style={{ minHeight: "180px" }}>
           {/* Project Card Image */}
-          <div className="absolute inset-0 w-full h-full">
+          <div className="absolute inset-0 w-full h-full overflow-hidden">
             <div className="relative w-full h-full">
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-[1]" />
-              <Image
-                fill
-                priority
-                alt={project.title}
-                className="object-contain object-center p-8"
-                src={project.image}
-              />
+              <div className="w-full h-full overflow-hidden">
+                <Image
+                  removeWrapper
+                  alt={project.title}
+                  className="w-full h-full"
+                  classNames={{
+                    wrapper: "w-full h-full !overflow-hidden",
+                    img: "object-contain object-center p-8 w-full h-full",
+                  }}
+                  radius="none"
+                  src={project.image}
+                />
+              </div>
             </div>
           </div>
 

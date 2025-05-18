@@ -6,7 +6,7 @@ import { Card, CardHeader } from "@heroui/card";
 import { Chip } from "@heroui/chip";
 import { Button } from "@heroui/button";
 import { Icon } from "@iconify/react";
-import Image from "next/image";
+import { Image } from "@heroui/image";
 
 import { TimelineEvent } from "./types";
 
@@ -45,14 +45,13 @@ export const TimelineHeaderCard: React.FC<TimelineHeaderCardProps> = ({
             <h4 className="text-black font-medium text-large">{event.title}</h4>
           </div>
         </CardHeader>
-        <div className="relative w-full h-full flex items-center justify-center">
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+        <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-[1]" />
           <div className="w-full h-full relative">
-            <Image
+            {/* Use a regular img tag with Tailwind classes for better control */}
+            <img
               alt={`${event.title} background`}
-              className="p-8 pt-16"
-              layout="fill"
-              objectFit="contain"
+              className="w-full h-full object-contain p-8 pt-16 absolute inset-0"
               src={event.image}
             />
           </div>
