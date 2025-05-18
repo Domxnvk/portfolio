@@ -1,53 +1,131 @@
-# Next.js & HeroUI Template
+# Portfolio - Next.js & HeroUI Portfolio Templates
 
-This is a template for creating applications using Next.js 14 (app directory) and HeroUI (v2).
+A modern, responsive portfolio template built with Next.js 14 and HeroUI components. This project was created for the "Portfolio Templates" hackathon, demonstrating best practices in frontend development with React, HeroUI, TailwindCSS, and Framer Motion animations.
 
-[Try it on CodeSandbox](https://githubbox.com/heroui-inc/heroui/next-app-template)
+![Portfolio Preview](https://cdn.acmbot.xyz/images/248e47980d4ddcaa2688f1b305b5f6d40b7d2aa5111f7ef59a4ba8e2d5ff229d.png)
+
+## Live Demo
+
+[View Live Demo](portfolio.acmdom.dev)
+
+## Features
+
+- **Modern UI Components** - Built with HeroUI v2 and styled with TailwindCSS
+- **Responsive Design** - Fully responsive across all device sizes
+- **Smooth Animations** - Enhanced user experience with Framer Motion
+- **Interactive Sections** - Hero, Projects, and Timeline sections with engaging interactions
+- **Performance Optimized** - Fast loading times and optimized image delivery
+- **Accessibility Focused** - ARIA attributes and keyboard navigation support
+
+## Sections
+
+### Hero Section
+- Personal introduction with animated skills display
+- Framework and technology showcase with floating animations
+- Call-to-action buttons with hover effects
+
+### Projects Section
+- Interactive project cards with flip animations
+- Modal project details with comprehensive information
+- Tag system for technologies used in each project
+
+### Timeline Section
+- Career progression visualization with interactive cards
+- Detailed work history with expandable information
+- Animated transitions between timeline events
 
 ## Technologies Used
 
-- [Next.js 14](https://nextjs.org/docs/getting-started)
-- [HeroUI v2](https://heroui.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [next-themes](https://github.com/pacocoursey/next-themes)
+- [Next.js 14](https://nextjs.org/docs/getting-started) - React framework with app directory structure
+- [HeroUI v2](https://heroui.com/) - Modern UI component library
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [Tailwind Variants](https://tailwind-variants.org) - Build variants with Tailwind CSS
+- [TypeScript](https://www.typescriptlang.org/) - Typed JavaScript
+- [Framer Motion](https://www.framer.com/motion/) - Animation library for React
+- [next-themes](https://github.com/pacocoursey/next-themes) - Theme management
+- [Iconify](https://iconify.design/) - Comprehensive icon library
 
-## How to Use
+## Getting Started
 
-### Use the template with create-next-app
+### Quick Start
 
-To create a new project based on this template using `create-next-app`, run the following command:
+To create a new project based on this template using `create-next-app`:
 
 ```bash
-npx create-next-app -e https://github.com/heroui-inc/next-app-template
+npx create-next-app -e https://github.com/domxnvk/portfolio-showcase
 ```
 
-### Install dependencies
+### Installation
 
-You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
+Clone the repository:
+
+```bash
+git clone https://github.com/domxnvk/portfolio-showcase.git
+cd portfolio-showcase
+```
+
+Install dependencies:
 
 ```bash
 npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
 ```
 
-### Run the development server
+### Development
+
+Run the development server:
 
 ```bash
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-### Setup pnpm (optional)
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-If you are using `pnpm`, you need to add the following code to your `.npmrc` file:
+### Using pnpm (optional)
 
-```bash
+If using `pnpm`, add the following to your `.npmrc` file:
+
+```
 public-hoist-pattern[]=*@heroui/*
 ```
 
-After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
+Then run `pnpm install` again to ensure dependencies are installed correctly.
+
+## Customization
+
+### Changing Personal Information
+
+Edit the data files in the sections folders:
+- `components/sections/landing/data.ts` - Skills and frameworks
+- `components/sections/projects/data.ts` - Project information
+- `components/sections/timeline/TimelineSection.tsx` - Career timeline
+
+### Styling
+
+The project uses TailwindCSS for styling:
+- Global styles can be adjusted in `tailwind.config.js`
+- Component-specific styles are included in their respective files
+- Primitive styles for typography are in `components/primitives.ts`
+
+### Adding New Sections
+
+Create new section components in the `components/sections` directory following the established patterns for consistency.
 
 ## License
 
-Licensed under the [MIT license](https://github.com/heroui-inc/next-app-template/blob/main/LICENSE).
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+Created with ❤️ by [Domxnvk](https://github.com/domxnvk) for the Portfolio Templates Hackathon
