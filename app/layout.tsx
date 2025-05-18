@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     default: "Portfolio",
     template: `%s - ACME`,
   },
-  description: "Create stunning interfaces with next-generation UI components",
+  description: "Create your own portfolio with this template",
   icons: {
     icon: "/favicon.ico",
   },
