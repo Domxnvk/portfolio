@@ -58,8 +58,9 @@ export const TimelineSection: React.FC = () => {
           <Divider className="max-w-md w-full mx-auto my-6" />
         </motion.div>
 
-        {/* Timeline Cards in Grid Layout */}
-        <div className="max-w-[900px] gap-4 grid grid-cols-12 md:grid-rows-2 mx-auto">
+        {/* Timeline Cards in Grid Layout - Fixed with explicit classes */}
+        <div className="max-w-[900px] gap-4 grid grid-cols-12 grid-rows-2 mx-auto">
+          {/* First row - 3 equal cards */}
           {timelineEvents.slice(0, 3).map((event, i) => (
             <TimelineCard
               key={event.id}
@@ -70,25 +71,26 @@ export const TimelineSection: React.FC = () => {
             />
           ))}
 
-          {/* Engineering Manager Card */}
-          <TimelineHeaderCard
-            colSpan={5}
-            event={timelineEvents[3]}
-            index={3}
-            isFlipped={flippedCards[3]}
-            position="current"
-            onCardClick={handleCardClick}
-          />
+          {/* Explicitly control the layout for the bottom two cards */}
+          <div className="col-span-12 sm:col-span-5">
+            <TimelineHeaderCard
+              event={timelineEvents[3]}
+              index={3}
+              isFlipped={flippedCards[3]}
+              position="current"
+              onCardClick={handleCardClick}
+            />
+          </div>
 
-          {/* VP of Engineering Card */}
-          <TimelineHeaderCard
-            colSpan={7}
-            event={timelineEvents[4]}
-            index={4}
-            isFlipped={flippedCards[4]}
-            position="future"
-            onCardClick={handleCardClick}
-          />
+          <div className="col-span-12 sm:col-span-7">
+            <TimelineHeaderCard
+              event={timelineEvents[4]}
+              index={4}
+              isFlipped={flippedCards[4]}
+              position="future" 
+              onCardClick={handleCardClick}
+            />
+          </div>
         </div>
       </div>
     </div>

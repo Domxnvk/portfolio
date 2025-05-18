@@ -16,7 +16,7 @@ interface TimelineHeaderCardProps {
   isFlipped: boolean;
   onCardClick: (index: number) => void;
   position: "current" | "future";
-  colSpan?: number;
+  className?: string;
 }
 
 export const TimelineHeaderCard: React.FC<TimelineHeaderCardProps> = ({
@@ -25,11 +25,11 @@ export const TimelineHeaderCard: React.FC<TimelineHeaderCardProps> = ({
   isFlipped,
   onCardClick,
   position,
-  colSpan = 5,
+  className = "",
 }) => {
   return (
     <motion.div
-      className={`w-full h-[300px] col-span-12 sm:col-span-${colSpan}`}
+      className={`w-full h-[300px] ${className}`}
       initial={{ opacity: 0, y: 30 }}
       transition={{ duration: 0.5, delay: 0.3 }}
       viewport={{ once: true }}
